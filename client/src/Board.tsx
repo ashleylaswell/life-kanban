@@ -98,7 +98,7 @@ export default function Board() {
         style={{
           marginTop: 18,
           display: "grid",
-          gridTemplateColumns: "repeat(4, minmax(220px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
           gap: 12,
           alignItems: "start",
         }}
