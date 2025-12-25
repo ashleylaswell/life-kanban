@@ -1,37 +1,26 @@
 # Life Kanban
 
-A small full-stack internal tool for organizing personal tasks using a simple Kanban workflow:
+A full-stack web application for organizing tasks using a simple Kanban-style workflow:
 
 Inbox → Today → Waiting → Done
 
-Built to demonstrate practical, junior-level full-stack development with real-world patterns.
+The application supports authenticated users and persistent task management across sessions.
 
-## What It Does
+## Features
 
-- Authenticated user accounts
-- Create, move, and delete task cards
-- Fixed Kanban columns to reduce complexity
-- Persistent storage with a relational database
+- User authentication
+- Create, update, move, and delete task cards
+- Fixed Kanban columns for task state
+- Persistent storage backed by a relational database
 
 ## Tech Stack
 
 - Frontend: React, Vite, TypeScript
 - Backend: Node.js, Express, TypeScript
 - Database: SQLite with Prisma
-- Auth: JWT stored in HTTP-only cookies
+- Authentication: JWT stored in HTTP-only cookies
 
-## Why This Project
-
-This project was intentionally scoped as an internal dashboard, similar to tools used for admin panels or ops workflows.
-The focus is on clarity, correctness, and maintainability rather than UI polish.
-
-## Key Decisions
-
-- Buttons instead of drag-and-drop for reliability and speed
-- Fixed workflow states to avoid over-engineering
-- SQLite for fast local development
-
-## Running Locally
+## Local Development
 
 Server:
 cd server
