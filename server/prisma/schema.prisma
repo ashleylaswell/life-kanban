@@ -1,0 +1,35 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum CardStatus {
+  INBOX
+  TODAY
+  WAITING
+  DONE
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  cards        Card[]
+}
+
+model Card {
+  id        String     @id @default(cuid())
+  userId    String
+  user      User       @relation(fields: [userId], references: [id])
+  title     String
+  notes     String?
+  tag       String?
+  status    CardStatus @default(INBOX)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
